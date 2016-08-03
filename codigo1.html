@@ -1,0 +1,27 @@
+canvas = document.getElementById("canvas");// procura o canvas
+context = canvas.getContext("2d");// recupera o contexto 2d
+
+barraWidth = 30;
+barraHeight = 90;
+jogadorPosX = 0;
+jogadorPosY = (canvas.height - barraHeight) / 2;
+teclaCimaPressionada = false;
+teclaBaixoPressionada = false;
+oponentePosX = canvas.width - barraWidth;
+oponentePosY = 0;
+oponenteParaCima = false;
+bolaRaio = 10;
+bolaPosX = canvas.width / 2;
+bolaPosY = canvas.height / 2;
+bolaParaDireita = false;
+bolaAngulo = Math.floor(Math.random() * 21) - 10;
+bolaTempo = 0;
+velocidadeJogador = 15;
+velocidadeOponente = 20;
+velocidadeBola = 15;
+pontosJogador = 0;
+pontosOponente = 0;
+
+document.addEventListener('keyup', keyUp, false);// adiciona evento para keyup
+document.addEventListener('keydown', keyDown, false);// adiciona evento para keydown
+setInterval(gameLoop, 30);// chama a function gameLoop a cada 30 frames
